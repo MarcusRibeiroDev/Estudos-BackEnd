@@ -1,0 +1,14 @@
+Tipo	         Evento	   Descrição
+
+Readable	 data	   Emite chunks de dados conforme são lidos.
+Readable	 end	   Disparado quando a stream de leitura chega ao fim.
+Readable	 error	   Disparado quando ocorre um erro durante a leitura.
+Readable	 close	   Stream de leitura fechada.
+Readable	 readable  Dados disponíveis para leitura manual com .read().
+Writable	 finish	   Todos os dados foram escritos e a stream foi finalizada.
+Writable	 error	   Disparado quando ocorre um erro durante a gravação.
+Writable	 drain	   O buffer foi esvaziado e pode continuar a escrever.
+Writable	 pipe	   Conectada a uma readable stream via pipe().
+Writable	 unpipe	   Desconectada de uma readable stream via unpipe().
+Duplex	         error	   Disparado por erros de leitura ou escrita.
+Duplex	         close	   A stream foi fechada.
