@@ -3,23 +3,23 @@ import { makeRequest } from "../database/conection.js";
 class TeamsRepositories {
   findAll() {
     return makeRequest(
-      "SELECT * FROM db_team.teams;",
+      "SELECT * FROM db_team_ts.teams_ts;",
       "Não foi possível recuperar todos os times"
     );
   }
 
   findById(id) {
     return makeRequest(
-      "SELECT * FROM db_team.teams WHERE id=?;",
+      "SELECT * FROM db_team_ts.teams_ts WHERE id=?;",
       "Não foi possível recuperar o time específico",
       id
     );
   }
 
   create(newTeam) {
-    let sql = "INSERT INTO db_team.teams SET ?;";
+    let sql = "INSERT INTO db_team_ts.teams_ts SET ?;";
     return makeRequest(
-      "INSERT INTO db_team.teams SET ?;",
+      "INSERT INTO db_team_ts.teams_ts SET ?;",
       "Não foi possível cadastrar um novo time",
       newTeam
     );
@@ -27,7 +27,7 @@ class TeamsRepositories {
 
   delete(id) {
     return makeRequest(
-      "DELETE FROM db_team.teams WHERE id=?;",
+      "DELETE FROM db_team_ts.teams_ts WHERE id=?;",
       "Não foi possível deletar o time",
       id
     );
@@ -35,7 +35,7 @@ class TeamsRepositories {
 
   update(id, newTeam) {
     return makeRequest(
-      "UPDATE db_team.teams SET ? WHERE id=?;",
+      "UPDATE db_team_ts.teams_ts SET ? WHERE id=?;",
       "Não foi possível atualizar informações do time",
       [newTeam, id]
     );
