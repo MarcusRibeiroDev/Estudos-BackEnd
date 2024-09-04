@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import routes from "./routes.js";
+import routes from "./routes";
 
 // Colocando o express no padrão json
 const app: Application = express();

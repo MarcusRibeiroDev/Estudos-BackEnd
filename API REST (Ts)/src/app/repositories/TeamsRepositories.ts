@@ -1,7 +1,7 @@
 import { makeRequest } from "../database/conection.js";
 
 class TeamsRepositories {
-  findAll() {
+  findAll(): Promise<> {
     return makeRequest(
       "SELECT * FROM db_team_ts.teams_ts;",
       "Não foi possível recuperar todos os times"
