@@ -7,8 +7,18 @@ interface Customer {
 
 class CreateCustomerService {
   async execute({ name, email }: Customer) {
-    console.log("Services");
-    return { client: [name, email] };
+    if (!name || !email) {
+      throw new Error("É necessário prencher os campos");
+    }
+
+    const client = await prismaClient.customers.create({
+      data: {
+        name,
+        email,
+        status: true,
+      },
+    });
+    return client;
   }
 }
 export { CreateCustomerService };
