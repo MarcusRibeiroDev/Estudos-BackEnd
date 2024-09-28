@@ -6,7 +6,7 @@ const app = Fastify({
   logger: true,
 });
 
-// Run the server!
+// Run the server
 const server = async () => {
   await app.register(cors);
   await app.register(routes);
